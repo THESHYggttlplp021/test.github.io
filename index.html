@@ -44,17 +44,11 @@
     </head>
 
     <body>
-        <audio loop autoplay id="myAudio" src="./纯音乐 - 新年第二跳～芳华慢 (片段版).ogg" autoplay
-        loop
-        id="video"
-        x5-video-player-type="h5"
-        x5-video-player-fullscreen
-        x5-video-orientation="portraint"
-        x-webkit-airplay
-        webkit-playsinline
-        playsinline
-        x5-playsinline
-        class="background-video"></audio>
+        <audio loop id="myAudio">
+            <source src="./纯音乐 - 新年第二跳～芳华慢 (片段版).ogg" type="audio/ogg">
+            <source src="./audio.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
     
         <div id="phrases">
             <span id="line1">sheng ri kuai le</span><br>
