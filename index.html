@@ -96,7 +96,7 @@
         //为按钮添加点击事件监听器，点击按钮时生成新的短语
         generateBtn.addEventListener('click', generatePhrases);
 
-        document.addEventListener('click', function(){
+        generateBtn.addEventListener('click', function(){
             var audio = document.getElementById('myAudio');
             audio.play();
         })
