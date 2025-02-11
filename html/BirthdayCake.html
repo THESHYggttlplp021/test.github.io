@@ -216,4 +216,35 @@
   </audio>
 </body>
 
+<script>
+  import wx from './jweixin-1.6.0.js';
+
+  const UA = window.navigator.userAgent;
+  const wechat = UA.includes('MicroMessenger') && !UA.includes('miniProgram');
+  if (wechat) {
+    const audio = document.getElementById('audio');
+    if (window.WeixinJSBridge) {
+      window.WeixinJSBridge.invoke(
+        'getNetworkType',
+        {},
+        function (e) {
+          audio.play();
+        },
+        false
+      );
+    } else {
+      document.addEventListener(
+        'WeixinJSBridgeReady',
+        function () {
+          window.WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+            audio.play();
+          });
+        },
+        false
+      );
+    }
+  } else {
+    this.$refs.audio.play();
+  }
+</script>
 </html>
