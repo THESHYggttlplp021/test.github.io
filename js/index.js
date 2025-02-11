@@ -15,7 +15,6 @@
 // '#countdown 3|hi|祝你|生日快乐|happy birthday||'
 var S = {
   init: function () {
-    var m=0;
     var action = window.location.href,
         i = action.indexOf('?a=');
 
@@ -25,18 +24,12 @@ var S = {
     if (i !== -1) {
       S.UI.simulate(decodeURI(action).substring(i + 3));
     } else {
-      S.UI.simulate('Hi 小X|祝你|生日快乐|happy birthday|#countdown 3||');
+      S.UI.simulate('hi|祝你|生日快乐|happy birthday|#rectangle|#countdown 3||');
     }
 
     S.Drawing.loop(function () {
-            m++;
       S.Shape.render();
-      //console.log(m);
-      if(m==700){
-        window.location.href="../html/BirthdayCake.html";
-      }
     });
-
   }
 };
 
